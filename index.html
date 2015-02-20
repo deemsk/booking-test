@@ -25,7 +25,10 @@
 		
 		<section class="photos js-carousel">
 		    <div class="photos__frame">
-	            <img src="img/1_large.jpg" class="js-carousel-photo" width="840" height="460" alt=""/>
+		        <span class="photos__image-wrapper">
+		            <img src="img/1_large.jpg" class="js-carousel-photo" width="840" height="460" alt=""/>
+		            <span class="photos__description js-carousel-photo-description hidden"></span>
+		        </span>
 		        <span class="photos__nav photos__nav_prev js-carousel-prev">&#x25C0;</span>
 		        <span class="photos__nav photos__nav_next js-carousel-next">&#x25B6;</span>
 		    </div>
@@ -144,23 +147,39 @@
 		
 		<section class="rooms">
 			<h2>Select Your Room</h2>
-			<form method="post" action="" class="rooms_table_form">
-				<table class="rooms_table" cellspacing="0" cellpadding="0">
-					<thead>
-						<tr>
-							<th class="room_name">Room Name</th>
-							<th class="room_occupancy">Occupancy</th>
-							<th class="room_price">Price per Room</th>
-							<th class="room_quantity">No. Rooms</th>
+			<form method="post" action="" class="rooms_table_form js-room-table">
+				<table class="rooms-table">
+					<thead class="js-room-table-head">
+						<tr class="rooms-table__hrow">
+							<th class="rooms-table__cell
+        							   rooms-table__cell_name">
+							    Room Name
+							</th>
+							<th class="rooms-table__cell
+                                       rooms-table__cell_occupancy
+							           rooms-table__cell_selectable
+							           js-room-table-occupancy-header">
+							    Occupancy
+							</th>
+							<th class="rooms-table__cell
+                                       rooms-table__cell_price
+           							   rooms-table__cell_selectable
+							           js-room-table-price-header">
+							    Price per Room
+							</th>
+							<th class="rooms-table__cell
+                                       rooms-table__cell_quantity">
+							    No. Rooms
+							</th>
 						</tr>
 					</thead>
-					<tbody>
-						<tr class="one_room">
-							<td class="room_name">Basic 2 Bed</td>
-							<td class="room_occupancy">2</td>
-							<td class="room_price">&euro;88.99</td>
-							<td class="room_quantity">
-								<select name="room[basic2]">
+					<tbody class="js-room-table-items">
+						<tr class="rooms-table__row js-room-table-item">
+							<td class="rooms-table__cell rooms-table__cell_name js-room-table-name">Basic 2 Bed</td>
+							<td class="rooms-table__cell rooms-table__cell_occupancy js-room-table-occupancy">2</td>
+							<td class="rooms-table__cell rooms-table__cell_price js-room-table-price">&euro;88.99</td>
+							<td class="rooms-table__cell rooms-table__cell_quantity">
+								<select name="room[basic2]" class="js-room-table-quantity">
 									<option value="0" selected="selected">0</option>
 									<option value="1">1</option>
 									<option value="2">2</option>
@@ -170,12 +189,12 @@
 								</select>
 							</td>
 						</tr>
-						<tr class="one_room">
-							<td class="room_name">Basic Family Room</td>
-							<td class="room_occupancy">4</td>
-							<td class="room_price">&euro;98.99</td>
-							<td class="room_quantity">
-								<select name="room[basicfamily]">
+						<tr class="rooms-table__row js-room-table-item">
+							<td class="rooms-table__cell rooms-table__cell_name js-room-table-name">Basic Family Room</td>
+							<td class="rooms-table__cell rooms-table__cell_occupancy js-room-table-occupancy">4</td>
+							<td class="rooms-table__cell rooms-table__cell_price js-room-table-price">&euro;98.99</td>
+							<td class="rooms-table__cell rooms-table__cell_quantity">
+								<select name="room[basicfamily]" class="js-room-table-quantity">
 									<option value="0" selected="selected">0</option>
 									<option value="1">1</option>
 									<option value="2">2</option>
@@ -185,12 +204,12 @@
 								</select>
 							</td>
 						</tr>
-						<tr class="one_room">
-							<td class="room_name">Deluxe 2 Bed</td>
-							<td class="room_occupancy">2</td>
-							<td class="room_price">&euro;109.99</td>
-							<td class="room_quantity">
-								<select name="room[deluxe2]">
+						<tr class="rooms-table__row js-room-table-item">
+							<td class="rooms-table__cell rooms-table__cell_name js-room-table-name">Deluxe 2 Bed</td>
+							<td class="rooms-table__cell rooms-table__cell_occupancy js-room-table-occupancy">2</td>
+							<td class="rooms-table__cell rooms-table__cell_price js-room-table-price">&euro;109.99</td>
+							<td class="rooms-table__cell rooms-table__cell_quantity">
+								<select name="room[deluxe2]" class="js-room-table-quantity">
 									<option value="0" selected="selected">0</option>
 									<option value="1">1</option>
 									<option value="2">2</option>
@@ -200,12 +219,12 @@
 								</select>
 							</td>
 						</tr>
-						<tr class="one_room">
-							<td class="room_name">Deluxe Family Room</td>
-							<td class="room_occupancy">7</td>
-							<td class="room_price">&euro;112.99</td>
-							<td class="room_quantity">
-								<select name="room[deluxefamily]">
+						<tr class="rooms-table__row js-room-table-item">
+							<td class="rooms-table__cell rooms-table__cell_name js-room-table-name">Deluxe Family Room</td>
+							<td class="rooms-table__cell rooms-table__cell_occupancy js-room-table-occupancy">7</td>
+							<td class="rooms-table__cell rooms-table__cell_price js-room-table-price">&euro;112.99</td>
+							<td class="rooms-table__cell rooms-table__cell_quantity">
+								<select name="room[deluxefamily]" class="js-room-table-quantity">
 									<option value="0" selected="selected">0</option>
 									<option value="1">1</option>
 									<option value="2">2</option>
@@ -215,12 +234,12 @@
 								</select>
 							</td>
 						</tr>
-						<tr class="one_room">
-							<td class="room_name">Bridal Suite</td>
-							<td class="room_occupancy">2</td>
-							<td class="room_price">&euro;167.99</td>
-							<td class="room_quantity">
-								<select name="room[bridalsuite]">
+						<tr class="rooms-table__row js-room-table-item">
+							<td class="rooms-table__cell rooms-table__cell_name js-room-table-name">Bridal Suite</td>
+							<td class="rooms-table__cell rooms-table__cell_occupancy js-room-table-occupancy">2</td>
+							<td class="rooms-table__cell rooms-table__cell_price js-room-table-price">&euro;167.99</td>
+							<td class="rooms-table__cell rooms-table__cell_quantity">
+								<select name="room[bridalsuite]" class="js-room-table-quantity">
 									<option value="0" selected="selected">0</option>
 									<option value="1">1</option>
 									<option value="2">2</option>
@@ -230,12 +249,12 @@
 								</select>
 							</td>
 						</tr>
-						<tr class="one_room">
-							<td class="room_name">President Suite</td>
-							<td class="room_occupancy">2</td>
-							<td class="room_price">&euro;301.99</td>
-							<td class="room_quantity">
-								<select name="room[presidentsuite]">
+						<tr class="rooms-table__row js-room-table-item">
+							<td class="rooms-table__cell rooms-table__cell_name js-room-table-name">President Suite</td>
+							<td class="rooms-table__cell rooms-table__cell_occupancy js-room-table-occupancy">2</td>
+							<td class="rooms-table__cell rooms-table__cell_price js-room-table-price">&euro;301.99</td>
+							<td class="rooms-table__cell rooms-table__cell_quantity">
+								<select name="room[presidentsuite]" class="js-room-table-quantity">
 									<option value="0" selected="selected">0</option>
 									<option value="1">1</option>
 									<option value="2">2</option>
@@ -245,12 +264,12 @@
 								</select>
 							</td>
 						</tr>
-						<tr class="one_room">
-							<td class="room_name">One+One</td>
-							<td class="room_occupancy">2</td>
-							<td class="room_price">&euro;78.99</td>
-							<td class="room_quantity">
-								<select name="room[oneplusone]">
+						<tr class="rooms-table__row js-room-table-item">
+							<td class="rooms-table__cell rooms-table__cell_name js-room-table-name">One+One</td>
+							<td class="rooms-table__cell rooms-table__cell_occupancy js-room-table-occupancy">2</td>
+							<td class="rooms-table__cell rooms-table__cell_price js-room-table-price">&euro;78.99</td>
+							<td class="rooms-table__cell rooms-table__cell_quantity">
+								<select name="room[oneplusone]" class="js-room-table-quantity">
 									<option value="0" selected="selected">0</option>
 									<option value="1">1</option>
 									<option value="2">2</option>
@@ -260,12 +279,12 @@
 								</select>
 							</td>
 						</tr>
-						<tr class="one_room">
-							<td class="room_name">Single Room</td>
-							<td class="room_occupancy">1</td>
-							<td class="room_price">&euro;28.99</td>
-							<td class="room_quantity">
-								<select name="room[single]">
+						<tr class="rooms-table__row js-room-table-item">
+							<td class="rooms-table__cell rooms-table__cell_name js-room-table-name">Single Room</td>
+							<td class="rooms-table__cell rooms-table__cell_occupancy js-room-table-occupancy">1</td>
+							<td class="rooms-table__cell rooms-table__cell_price js-room-table-price">&euro;28.99</td>
+							<td class="rooms-table__cell rooms-table__cell_quantity">
+								<select name="room[single]" class="js-room-table-quantity">
 									<option value="0" selected="selected">0</option>
 									<option value="1">1</option>
 									<option value="2">2</option>
@@ -275,12 +294,12 @@
 								</select>
 							</td>
 						</tr>
-						<tr class="one_room">
-							<td class="room_name">Queen Room</td>
-							<td class="room_occupancy">2</td>
-							<td class="room_price">&euro;99.99</td>
-							<td class="room_quantity">
-								<select name="room[queen]">
+						<tr class="rooms-table__row js-room-table-item">
+							<td class="rooms-table__cell rooms-table__cell_name js-room-table-name">Queen Room</td>
+							<td class="rooms-table__cell rooms-table__cell_occupancy js-room-table-occupancy">2</td>
+							<td class="rooms-table__cell rooms-table__cell_price js-room-table-price">&euro;99.99</td>
+							<td class="rooms-table__cell rooms-table__cell_quantity">
+								<select name="room[queen]" class="js-room-table-quantity">
 									<option value="0" selected="selected">0</option>
 									<option value="1">1</option>
 									<option value="2">2</option>
@@ -290,12 +309,12 @@
 								</select>
 							</td>
 						</tr>
-						<tr class="one_room">
-							<td class="room_name">Basement 1 Bed</td>
-							<td class="room_occupancy">2</td>
-							<td class="room_price">&euro;9.99</td>
-							<td class="room_quantity">
-								<select name="room[basement1]">
+						<tr class="rooms-table__row js-room-table-item">
+							<td class="rooms-table__cell rooms-table__cell_name js-room-table-name">Basement 1 Bed</td>
+							<td class="rooms-table__cell rooms-table__cell_occupancy js-room-table-occupancy">2</td>
+							<td class="rooms-table__cell rooms-table__cell_price js-room-table-price">&euro;9.99</td>
+							<td class="rooms-table__cell rooms-table__cell_quantity">
+								<select name="room[basement1]" class="js-room-table-quantity">
 									<option value="0" selected="selected">0</option>
 									<option value="1">1</option>
 									<option value="2">2</option>
@@ -305,12 +324,12 @@
 								</select>
 							</td>
 						</tr>
-						<tr class="one_room">
-							<td class="room_name">Mega XL Suite</td>
-							<td class="room_occupancy">9</td>
-							<td class="room_price">&euro;412.99</td>
-							<td class="room_quantity">
-								<select name="room[megaxl]">
+						<tr class="rooms-table__row js-room-table-item">
+							<td class="rooms-table__cell rooms-table__cell_name js-room-table-name">Mega XL Suite</td>
+							<td class="rooms-table__cell rooms-table__cell_occupancy js-room-table-occupancy">9</td>
+							<td class="rooms-table__cell rooms-table__cell_price js-room-table-price">&euro;412.99</td>
+							<td class="rooms-table__cell rooms-table__cell_quantity">
+								<select name="room[megaxl]" class="js-room-table-quantity">
 									<option value="0" selected="selected">0</option>
 									<option value="1">1</option>
 									<option value="2">2</option>
@@ -322,8 +341,14 @@
 						</tr>																																																		
 					</tbody>
 					<tfoot>
-						<tr>
-							<td colspan="4">
+						<tr class="rooms-table__frow">
+						    <td colspan="3" class="rooms-table__cell">
+						        <div class="rooms-table__total invisible js-room-table-total">
+    						        Total:
+    						        <span class="rooms-table__total-sum js-room-table-total-sum">&euro;0</span>
+    						    </div>
+						    </td>
+							<td class="rooms-table__cell">
 								<button class="button" type="submit">Book Now</button>
 							</td>
 						</tr>
@@ -551,6 +576,9 @@
 		    new Carousel(
 		        document.querySelector('.js-carousel')
 		    );
+		    new RoomTable(
+		        document.querySelector('.js-room-table')
+		    )
 		</script>
 	</body>
 </html>

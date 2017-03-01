@@ -21,11 +21,10 @@ Carousel.prototype = {
             
         $(document)
             .on('keydown', this.onKeyDown.bind(this));
-        
-        this.showPhoto(0);
+
         this.playSlideshow();
     },
-    
+
     addItem: function(index, element) {
         var image = element.querySelector('.js-carousel-thumb-image');
 
